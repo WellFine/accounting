@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#f6f6f6",
+  "usingComponents": {
+    "com-card": "./card/card"
+  }
+}

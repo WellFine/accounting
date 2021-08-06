@@ -1,0 +1,17 @@
+<view class="nav">
+  <text class="{{nav == 1 ? 'active' : ''}}" data-nav="1" bind:tap="tapNav">双色</text>
+  <text class="{{nav == 2 ? 'active' : ''}}" data-nav="2" bind:tap="tapNav">三色</text>
+  <text class="{{nav == 3 ? 'active' : ''}}" data-nav="3" bind:tap="tapNav">四色</text>
+</view>
+
+<view class="content">
+  <block wx:if="{{nav == 1}}" wx:for="{{two}}">
+    <com-card color="{{item}}"></com-card>
+  </block>
+  <block wx:if="{{nav == 2}}" wx:for="{{three}}">
+    <com-card color="{{item}}"></com-card>
+  </block>
+  <block wx:if="{{nav == 3}}" wx:for="{{four}}">
+    <com-card color="{{item}}"></com-card>
+  </block>
+</view>
