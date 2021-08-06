@@ -37,7 +37,7 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "appid": "wxdbde6bfe82211950",
+  "appid": "你的 appid / your appid",
   "projectname": "accounting",
   "libVersion": "2.18.0",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
