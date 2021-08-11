@@ -1,4 +1,11 @@
 {
   "navigationBarTitleText": "收支",
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "com-total-money": "/components/index/totalMoney/total",
+    "com-can-use-money": "/components/index/canUseMoney/use",
+    "com-income-expend": "/components/index/incomeExpend/incomeExpend",
+    "com-data-info": "/components/index/dataInfo/info",
+    "com-icon": "/components/common/icon/icon"
+  }
 }

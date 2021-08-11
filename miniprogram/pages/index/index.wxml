@@ -1,0 +1,45 @@
+<com-total-money money="{{ totalMoney }}" />
+
+<com-income-expend income="{{ income }}" expend="{{ expend }}" />
+
+<swiper autoplay>
+  <swiper-item>
+    <com-can-use-money 
+      use="{{ monthCanUseMoney }}" useText="本月可支配金额"
+      leftover="{{ monthLeftoverMoney }}" leftoverText="本月剩余可支配"
+    />
+  </swiper-item>
+  <swiper-item>
+    <com-can-use-money
+      use="{{ dayCanUseMoney }}" useText="每日可支配金额"
+      leftover="{{ dayLeftoverMoney }}" leftoverText="今日剩余可支配"
+    />
+  </swiper-item>
+</swiper>
+
+<com-data-info class="data" />
+
+
+<!-- <view style="display: flex; flex-wrap: wrap;">
+  <com-icon type="canyin" />
+  <com-icon type="licai" />
+  <com-icon type="yundon" />
+  <com-icon type="yule" />
+  <com-icon type="gongzi" />
+  <com-icon type="renqing" />
+  <com-icon type="gouwu" />
+  <com-icon type="yiliao" />
+  <com-icon type="qita" />
+  <com-icon type="lvxing" />
+  <com-icon type="touzi" />
+  <com-icon type="hongbao" />
+  <com-icon type="shengyi" />
+  <com-icon type="chongwu" />
+  <com-icon type="kuan" />
+  <com-icon type="jiaoton" />
+  <com-icon type="baoxian" />
+  <com-icon type="jiangjin" />
+  <com-icon type="jiaofei" />
+  <com-icon type="zhuanzhang" />
+  <com-icon type="baoxiao" />
+</view> -->
