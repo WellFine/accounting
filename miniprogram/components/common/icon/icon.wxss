@@ -1,0 +1,13 @@
+.container {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: #69c0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container image {
+  width: 40rpx;
+  height: 40rpx;
+}

@@ -1,0 +1,3 @@
+<view class="container">
+  <image src="/images/type/{{type}}.png"></image>
+</view>
