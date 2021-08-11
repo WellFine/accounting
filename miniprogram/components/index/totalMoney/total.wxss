@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .money {
+  display: flex;
+  flex-direction: column;
+}
+.container .money text:first-child {
+  font-size: 42rpx;
+  margin-left: 10rpx;
+}
+.container .money text:last-child {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.container .add {
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 20rpx;
+  box-shadow: 0 0 10rpx 5rpx rgba(0, 0, 0, .2);
+  margin-right: 20rpx;
+}
