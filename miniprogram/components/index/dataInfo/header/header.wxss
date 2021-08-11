@@ -1,0 +1,73 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 5rpx rgba(94, 73, 73, 0.2);
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .flex {
+  display: flex;
+  align-items: center;
+}
+
+.container .triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10rpx 10rpx 0rpx 10rpx;
+  border-color: #69c0ff transparent transparent transparent;
+  margin: 6rpx 10rpx 0;
+}
+
+.type-container {
+  box-sizing: border-box;
+  width: 100%;
+  background: #f5f5f5;
+}
+.type-container .header {
+  padding: 20rpx;
+  border-bottom: 1px solid #ababab;
+}
+.type-container .header .close {
+  position: absolute;
+  top: 18rpx;
+}
+.type-container .header .text {
+  text-align: center;
+}
+
+.type-container .type {
+  box-sizing: border-box;
+  height: 666rpx;
+  padding: 20rpx
+}
+.type .box {
+  width: 180rpx;
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 32rpx;
+}
+.type .box-active {
+  background: #69c0ff;
+  color: #fff;
+}
+.type .title {
+  font-size: 24rpx;
+  color: #ababab;
+}
+.type .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.type .type-icon {
+  margin-top: 6rpx;
+  margin-left: -10rpx;
+}

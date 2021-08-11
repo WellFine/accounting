@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="time flex">
+    <picker
+      header-text="请选择月份" mode="date" value="{{date}}" fields="month"
+      bind:change="changeTime"
+    >
+      <text>{{dateStr}}</text>
+    </picker>
+    <view class="triangle"></view>
+  </view>
+  <view class="type flex" bind:tap="openSelectType">
+    <view class="triangle"></view>
+    <text>{{type}}</text>
+  </view>
+</view>
+
+<page-container show="{{isSelectType}}" bind:clickoverlay="clickoverlay">
+  <view class="type-container">
+    <view class="header">
+      <mp-icon class="close" icon="close" size="18" color="#ababab" bind:tap="closeSelectType"></mp-icon>
+      <view class="text">请选择类型</view>
+    </view>
+    <scroll-view class="type" scroll-y>
+      <view class="all box {{type === '全部类型' ? 'box-active' : ''}}">全部类型</view>
+      <view class="expend">
+        <text class="title">支出</text>
+        <view class="box-container">
+          <view wx:for="{{expend}}" wx:key="name" class="box {{type === item.name ? 'box-active' : ''}}" data-title="0" data-type="{{item.name}}" bind:tap="changeType">
+            <com-icon type="{{item.py}}" class="type-icon"></com-icon>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="income">
+        <text class="title">收入</text>
+        <view class="box-container">
+          <view wx:for="{{income}}" wx:key="name" class="box {{type === item.name ? 'box-active' : ''}}" data-title="1" data-type="{{item.name}}" bind:tap="changeType">
+            <com-icon type="{{item.py}}" class="type-icon"></com-icon>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="other">
+        <text class="title">不计入收支</text>
+        <view class="box-container">
+          <view wx:for="{{other}}" wx:key="name" class="box {{type === item.name ? 'box-active' : ''}}" data-title="2" data-type="{{item.name}}" bind:tap="changeType">
+            <com-icon type="{{item.py}}" class="type-icon"></com-icon>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</page-container>
