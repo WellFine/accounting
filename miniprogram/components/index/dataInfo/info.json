@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "com-header": "./header/header"
+  }
+}
