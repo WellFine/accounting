@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="money">
+    <com-text-money text="{{ useText }}" money="{{ use }}" />
+    <com-text-money text="{{ leftoverText }}" money="{{ leftover }}" />
+  </view>
+  <view class="water-ball">
+    <ec-canvas id="charts-dom" canvas-id="charts" ec="{{ ec }}" />
+  </view>
+</view>

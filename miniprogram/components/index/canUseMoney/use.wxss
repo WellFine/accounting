@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .water-ball,
+.container .water-ball canvas {
+  width: 300rpx;
+  height: 300rpx;
+}

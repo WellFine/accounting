@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "com-text-money": "../textMoney/textMoney",
+    "ec-canvas": "/components/ec-canvas/ec-canvas"
+  }
+}
