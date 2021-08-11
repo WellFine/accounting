@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 36rpx;
+}
+.container text:first-child {
+  color: #595959;
+}
+.container text:last-child {
+  font-size: 40rpx;
+  font-weight: 600;
+}

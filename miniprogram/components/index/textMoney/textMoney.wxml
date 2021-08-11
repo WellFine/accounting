@@ -1,0 +1,4 @@
+<view class="container">
+  <text>{{text}}</text>
+  <text>￥{{money}}</text>
+</view>
