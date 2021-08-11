@@ -3,7 +3,7 @@
     <text class="">小金库</text>
     <text>￥{{money}}</text>
   </view>
-  <view class="add">
+  <view class="add" bind:tap="goToAddPage">
     <mp-icon icon="add" size="{{40}}"></mp-icon>
   </view>
 </view>
