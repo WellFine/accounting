@@ -1,5 +1,9 @@
 Component({
   properties: {
-    type: String
+    type: String,
+    color: {
+      type: String,
+      value: '#69c0ff'
+    }
   }
 })
