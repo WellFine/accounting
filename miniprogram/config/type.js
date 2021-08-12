@@ -18,7 +18,7 @@ const huankuan = new Type('还款', '/images/type/kuan.png', 'kuan')
 
 const baoxiao = new Type('报销', '/images/type/baoxiao.png', 'baoxiao')
 
-const incomeType = {
+const incomeType = [
   gongzi,
   jiangjin,
   hongbao,
@@ -28,7 +28,7 @@ const incomeType = {
   huankuan,
   baoxiao,
   qita
-}
+]
 
 const canyin = new Food
 
@@ -54,7 +54,7 @@ const lvxing = new Type('旅行', '/images/type/lvxing.png', 'lvxing')
 
 const jiekuan = new Type('借款', '/images/type/kuan.png', 'kuan')
 
-const expendType = {
+const expendType = [
   canyin,
   jiaoton,
   gouwu,
@@ -71,14 +71,14 @@ const expendType = {
   lvxing,
   jiekuan,
   qita
-}
+]
 
 const licai = new Type('理财', '/images/type/licai.png', 'licai')
 
-const otherType = {
+const otherType = [
   licai,
   qita
-}
+]
 
 export {
   incomeType,
