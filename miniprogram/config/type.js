@@ -1,22 +1,22 @@
-import { Type, Food, Invest } from '../class/Type'
+import { Type, Food, Invest, Vehicle, Shopping, Pay, Entertainment, Sport, Pet, HumanFeelings, Insurance, Daily } from '../class/Type'
 
-const qita = new Type('其它', '/images/type/qita.png', 'qita')
+const qita = new Type('其它', 'qita')
 
 const touzi = new Invest
 
-const hongbao = new Type('红包', '/images/type/hongbao.png', 'hongbao')
+const hongbao = new Type('红包', 'hongbao')
 
-const zhuanzhang = new Type('转账', '/images/type/zhuanzhang.png', 'zhuanzhang')
+const zhuanzhang = new Type('转账', 'zhuanzhang')
 
-const gongzi = new Type('工资', '/images/type/gongzi.png', 'gongzi')
+const gongzi = new Type('工资', 'gongzi')
 
-const jiangjin = new Type('奖金', '/images/type/jiangjin.png', 'jiangjin')
+const jiangjin = new Type('奖金', 'jiangjin')
 
-const shengyi = new Type('生意', '/images/type/shengyi.png', 'shengyi')
+const shengyi = new Type('生意', 'shengyi')
 
-const huankuan = new Type('还款', '/images/type/kuan.png', 'kuan')
+const jiekuan = new Type('借款', 'kuan')
 
-const baoxiao = new Type('报销', '/images/type/baoxiao.png', 'baoxiao')
+const baoxiao = new Type('报销', 'baoxiao')
 
 const incomeType = [
   gongzi,
@@ -25,55 +25,58 @@ const incomeType = [
   zhuanzhang,
   touzi,
   shengyi,
-  huankuan,
+  jiekuan,
   baoxiao,
   qita
 ]
 
 const canyin = new Food
 
-const jiaoton = new Type('交通', '/images/type/jiaoton.png', 'jiaoton')
+const jiaoton = new Vehicle
 
-const gouwu = new Type('购物', '/images/type/gouwu.png', 'gouwu')
+const gouwu = new Shopping
 
-const yule = new Type('娱乐', '/images/type/yule.png', 'yule')
+const jiaofei = new Pay
 
-const yundon = new Type('运动', '/images/type/yundon.png', 'yundon')
+const richang = new Daily
 
-const jiaofei = new Type('缴费', '/images/type/jiaofei.png', 'jiaofei')
+const yule = new Entertainment
 
-const chongwu = new Type('宠物', '/images/type/chongwu.png', 'chongwu')
+const yundon = new Sport
 
-const yiliao = new Type('医疗', '/images/type/yiliao.png', 'yiliao')
+const chongwu = new Pet
 
-const renqing = new Type('人情', '/images/type/renqing.png', 'renqing')
+const yiliao = new Type('医疗', 'yiliao')
 
-const baoxian = new Type('保险', '/images/type/baoxian.png', 'baoxian')
+const renqing = new HumanFeelings
 
-const lvxing = new Type('旅行', '/images/type/lvxing.png', 'lvxing')
+const baoxian = new Insurance
 
-const jiekuan = new Type('借款', '/images/type/kuan.png', 'kuan')
+const lvxing = new Type('旅行', 'lvxing')
+
+const huankuan = new Type('还款', 'kuan')
 
 const expendType = [
   canyin,
   jiaoton,
   gouwu,
   jiaofei,
+  richang,
   yule,
   yundon,
+  touzi,
   hongbao,
   zhuanzhang,
-  touzi,
   chongwu,
   yiliao,
   renqing,
   baoxian,
   lvxing,
-  jiekuan,
+  huankuan,
   qita
 ]
 
-const licai = new Type('理财', '/images/type/licai.png', 'licai')
+const licai = new Type('理财', 'licai')
 
 const otherType = [
   licai,
