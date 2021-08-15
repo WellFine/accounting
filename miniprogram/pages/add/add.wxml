@@ -1,0 +1,81 @@
+<view class="header row-between-center">
+  <view class="type">
+    <text class="{{type === 0 ? 'expend' : 'normal'}}" data-type="{{0}}" bind:tap="switchType">支出</text>
+    <text class="{{type === 1 ? 'income' : 'normal'}}" data-type="{{1}}" bind:tap="switchType">收入</text>
+    <text class="{{type === 2 ? 'other' : 'normal'}}" data-type="{{2}}" bind:tap="switchType">不计入收支</text>
+  </view>
+  <view class="time">
+    <picker
+      header-text="请选择日期" mode="date" value="{{date}}" end="{{dateEnd}}"
+      bind:change="changeTime"
+    >{{dateStr}}</picker>
+  </view>
+</view>
+
+<view class="money row-null-center">
+  <text class="symbol">￥</text>
+  <input class="input" type="digit" value="{{money}}" bind:input="inputMoney" />
+</view>
+
+<com-scroll-type-list wx:if="{{type === 0}}"
+  list="{{expendType}}" color="#69c0ff"
+  bind:getTypeName="switchTypeName"
+/>
+<com-scroll-type-list wx:elif="{{type === 1}}"
+  list="{{incomeType}}" color="#73d13d"
+  bind:getTypeName="switchTypeName"
+/>
+<com-scroll-type-list wx:elif="{{type === 2}}"
+  list="{{otherType}}" color="#b37feb"
+  bind:getTypeName="switchTypeName"
+/>
+
+<!-- 如果有 sub 子类型的，可以选择 subType -->
+<view class="sub-container" wx:if="{{typeObj.sub.length > 0}}">
+  <!-- class 类根据收支类型不同而不同 -->
+  <view
+    class="sub-item text-box normal {{subIndex === index ? (type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')) : ''}}"
+    wx:for="{{typeObj.sub}}" wx:key="*this"
+    data-index="{{index}}" data-name="{{item}}" bind:tap="chooseSubName"
+  >{{item}}</view>
+</view>
+
+<!-- 餐饮类型可选择食用方式：堂食、外卖等 -->
+<view class="canyin-how row-null-center" wx:if="{{typeObj.how.length > 0}}">
+  <view
+    class="how-item text-box {{howEat === item ? 'active' : ''}}" wx:for="{{typeObj.how}}" wx:key="*this"
+    data-how="{{item}}" bind:tap="chooseHowEat"
+  >{{item}}</view>
+</view>
+
+<view class="account row-between-center">
+  <view class="weixin row-null-center account-box" style="box-shadow: {{account === 'weixin' ? '0 0 10rpx 10rpx rgba(82, 196, 26, 0.5)' : '' }};" data-account="weixin" bind:tap="chooseAccount">
+    <image src="/images/account/wechat.png"></image>
+    <text>微信</text>
+  </view>
+  <view class="zhifubao row-null-center account-box" style="box-shadow: {{account === 'zhifubao' ? '0 0 10rpx 10rpx rgba(24, 144, 255, 0.5)' : '' }};" data-account="zhifubao" bind:tap="chooseAccount">
+    <image src="/images/account/zhifubao.png"></image>
+    <text>支付宝</text>
+  </view>
+  <view class="yinhangka row-null-center account-box" style="box-shadow: {{account === 'yinhangka' ? '0 0 10rpx 10rpx rgba(245, 34, 45, 0.5)' : '' }};" data-account="yinhangka" bind:tap="chooseAccount">
+    <image src="/images/account/yinhangka.png"></image>
+    <text>银行卡</text>
+  </view>
+  <view class="xianjin row-null-center account-box" style="box-shadow: {{account === 'xianjin' ? '0 0 10rpx 10rpx rgba(19, 194, 194, 0.5)' : '' }};" data-account="xianjin" bind:tap="chooseAccount">
+    <image src="/images/account/xianjin.png"></image>
+    <text>现金</text>
+  </view>
+</view>
+
+<view class="remark">
+  <view wx:if="{{!isAddRemark}}" class="row-between-center">
+    <text style="color: {{type === 0 ? '#40a9ff' : (type === 1 ? '#73d13d' : '#9254de')}};" bind:tap="readyAddRemark">添加备注</text>
+    <button class="remark-btn {{type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')}}" size="mini" loading="{{isAdd}}" bind:tap="add">入账</button>
+  </view>
+  <textarea wx:else
+    placeholder="请输入备注内容" maxlength="50" auto-height
+    bind:input="inputRemark"
+  ></textarea>
+</view>
+
+<button wx:if="{{isAddRemark}}" class="add-btn {{type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')}}" loading="{{isAdd}}" bind:tap="add">入账</button>

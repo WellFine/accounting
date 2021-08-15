@@ -1,0 +1,153 @@
+page {
+  --normal-color: #8c8c8c;
+  --normal-background: #f5f5f5;
+  --expend-color: #40a9ff;
+  --expend-background: #bae7ff;
+  --income-color: #73d13d;
+  --income-background: #d9f7be;
+  --other-color: #9254de;
+  --other-background: #efdbff;
+  box-sizing: border-box;
+  padding: 10rpx 30rpx 20rpx;
+}
+
+.normal {
+  color: var(--normal-color);
+  background: var(--normal-background);
+}
+.expend {
+  color: var(--expend-color);
+  background: var(--expend-background);
+}
+.income {
+  color: var(--income-color);
+  background: var(--income-background);
+}
+.other {
+  color: var(--other-color);
+  background: var(--other-background);
+}
+
+.text-box {
+  padding: 10rpx 30rpx;
+  border-radius: 6rpx;
+}
+
+/* 头部收支类型和时间 start */
+.header .type text {
+  padding: 10rpx 20rpx;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+}
+.header .type text:nth-child(2) {
+  margin: 0 20rpx;
+}
+
+.header .time {
+  font-size: 24rpx;
+  background: #f5f5f5;
+  padding: 10rpx 20rpx;
+  border-radius: 6rpx;
+}
+/* 头部收支类型和时间 end */
+
+
+/* 金额区域 start */
+.money {
+  margin: 30rpx 0 20rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: bold;
+}
+.money .symbol {
+  font-size: 60rpx;
+  margin-right: 10rpx;
+}
+.money .input {
+  flex: 1;
+  height: 100%;
+  font-size: 80rpx;
+  letter-spacing: 2rpx;
+}
+/* 金额区域 end */
+
+
+/* 子类型区域，如餐饮中早餐、晚餐等 start */
+.sub-container {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.sub-container .sub-item {
+  margin: 0 20rpx 20rpx 0;
+}
+/* 子类型区域，如餐饮中早餐、晚餐等 end */
+
+
+/* 餐饮类型食用方式 start */
+.how-item {
+  margin-right: 20rpx;
+  color: var(--normal-color);
+  background: var(--normal-background);
+}
+.how-item.active {
+  color: #f759ab;
+  background: #ffd6e7;
+}
+/* 餐饮类型食用方式 end */
+
+
+/* 选择收支记账账户 start */
+.account {
+  margin: 30rpx 0;
+}
+.account .account-box {
+  padding: 10rpx 20rpx;
+  border-radius: 8rpx;
+}
+.account text {
+  font-size: 28rpx;
+  color: #fff;
+}
+.account image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 14rpx;
+}
+.account .weixin {
+  background: #52c41a;
+}
+.account .zhifubao {
+  background: #1890ff;
+}
+.account .yinhangka {
+  background: #f5222d;
+}
+.account .xianjin {
+  background: #13c2c2;
+}
+/* 选择收支记账账户 end */
+
+
+/* 备注 start */
+.remark text {
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  margin-right: 30rpx;
+}
+.remark .remark-btn {
+  flex: 1;
+  margin: 0;
+  padding: 10rpx;
+}
+.remark textarea {
+  width: 100%;
+  padding: 10rpx 10rpx 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 30rpx;
+}
+/* 备注 end */
+
+.add-btn {
+  margin-top: 20rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "记账",
+  "usingComponents": {
+    "com-scroll-type-list": "/components/add/scrollTypeList/list"
+  }
+}
