@@ -1,0 +1,10 @@
+<scroll-view scroll-y class="scroll">
+  <view class="list">
+    <block wx:for="{{list}}" wx:key="_id">
+      <view class="type" data-index="{{index}}" data-type="{{item}}" bind:tap="changeType">
+        <com-icon type="{{index === active ? item.py : (item.py + '-dark')}}" color="{{index === active ? color : normalBackground}}"></com-icon>
+        <text style="color: {{index === active ? '' : normalColor}}">{{item.type}}</text>
+      </view>
+    </block>
+  </view>
+</scroll-view>
