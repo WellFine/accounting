@@ -163,9 +163,9 @@ Page({
       this.setData({
         isAdd: false
       })
-      // wx.navigateBack({
-      //   delta: 1,
-      // })
+      wx.navigateBack({
+        delta: 1,
+      })
     })
   },
 
