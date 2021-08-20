@@ -1,5 +1,5 @@
 import { getYMDTime } from '../../utils/date'
-import { moneyFormat } from '../../utils/money'
+import { makeMoneyTrue } from '../../utils/money'
 import { expendType, incomeType, otherType } from '../../config/type'
 
 Page({
@@ -12,7 +12,7 @@ Page({
 
     money: '',
     // 收支记账的账户
-    account: 'weixin',
+    account: 'wechat',
 
     typeObj: expendType[0],
     expendType,
@@ -75,7 +75,7 @@ Page({
   // 输入金额
   inputMoney (e) {
     this.setData({
-      money: moneyFormat(e.detail.value)
+      money: makeMoneyTrue(e.detail.value)
     })
   },
 
@@ -146,9 +146,8 @@ Page({
     })
     
     wx.cloud.callFunction({
-      name: 'account',
+      name: 'add',
       data: {
-        url: 'add',
         type,
         name: typeObj.type,
         py: typeObj.py,
@@ -165,6 +164,11 @@ Page({
       })
       wx.navigateBack({
         delta: 1,
+      })
+    }).catch(() => {
+      wx.showToast({
+        title: '网络可能出错啦',
+        icon: 'none'
       })
     })
   },

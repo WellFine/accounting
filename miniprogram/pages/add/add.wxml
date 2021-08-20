@@ -49,20 +49,20 @@
 </view>
 
 <view class="account row-between-center">
-  <view class="weixin row-null-center account-box" style="box-shadow: {{account === 'weixin' ? '0 0 10rpx 10rpx rgba(82, 196, 26, 0.5)' : '' }};" data-account="weixin" bind:tap="chooseAccount">
+  <view class="wechat row-null-center account-box" style="box-shadow: {{account === 'wechat' ? '0 0 10rpx 10rpx rgba(82, 196, 26, 0.5)' : '' }};" data-account="wechat" bind:tap="chooseAccount">
     <image src="/images/account/wechat.png"></image>
     <text>微信</text>
   </view>
-  <view class="zhifubao row-null-center account-box" style="box-shadow: {{account === 'zhifubao' ? '0 0 10rpx 10rpx rgba(24, 144, 255, 0.5)' : '' }};" data-account="zhifubao" bind:tap="chooseAccount">
-    <image src="/images/account/zhifubao.png"></image>
+  <view class="alipay row-null-center account-box" style="box-shadow: {{account === 'alipay' ? '0 0 10rpx 10rpx rgba(24, 144, 255, 0.5)' : '' }};" data-account="alipay" bind:tap="chooseAccount">
+    <image src="/images/account/alipay.png"></image>
     <text>支付宝</text>
   </view>
-  <view class="yinhangka row-null-center account-box" style="box-shadow: {{account === 'yinhangka' ? '0 0 10rpx 10rpx rgba(245, 34, 45, 0.5)' : '' }};" data-account="yinhangka" bind:tap="chooseAccount">
-    <image src="/images/account/yinhangka.png"></image>
+  <view class="bank row-null-center account-box" style="box-shadow: {{account === 'bank' ? '0 0 10rpx 10rpx rgba(245, 34, 45, 0.5)' : '' }};" data-account="bank" bind:tap="chooseAccount">
+    <image src="/images/account/bank.png"></image>
     <text>银行卡</text>
   </view>
-  <view class="xianjin row-null-center account-box" style="box-shadow: {{account === 'xianjin' ? '0 0 10rpx 10rpx rgba(19, 194, 194, 0.5)' : '' }};" data-account="xianjin" bind:tap="chooseAccount">
-    <image src="/images/account/xianjin.png"></image>
+  <view class="cash row-null-center account-box" style="box-shadow: {{account === 'cash' ? '0 0 10rpx 10rpx rgba(19, 194, 194, 0.5)' : '' }};" data-account="cash" bind:tap="chooseAccount">
+    <image src="/images/account/cash.png"></image>
     <text>现金</text>
   </view>
 </view>

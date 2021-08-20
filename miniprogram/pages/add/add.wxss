@@ -114,16 +114,16 @@ page {
   height: 40rpx;
   margin-right: 14rpx;
 }
-.account .weixin {
+.account .wechat {
   background: #52c41a;
 }
-.account .zhifubao {
+.account .alipay {
   background: #1890ff;
 }
-.account .yinhangka {
+.account .bank {
   background: #f5222d;
 }
-.account .xianjin {
+.account .cash {
   background: #13c2c2;
 }
 /* 选择收支记账账户 end */
