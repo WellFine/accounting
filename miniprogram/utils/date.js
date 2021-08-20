@@ -2,7 +2,7 @@ function _getMonth (date) {
   return date.getMonth() + 1
 }
 function _pad (value) {
-  return value < 10 ? `${value}`.padStart(2, 0) : `${value}`
+  return String(value).padStart(2, 0)
 }
 function _getMonthStr (date) {
   return _pad(date.getMonth() + 1)
@@ -49,8 +49,8 @@ function getHMSTime (date = null) {
   }
 }
 
-function getYMDWHMSTime () {
-  const date = new Date
+function getYMDWHMSTime (date = null) {
+  date = date ? date : new Date
 
   return {
     ...getYMDTime(date),
@@ -59,8 +59,31 @@ function getYMDWHMSTime () {
   }
 }
 
+/**
+ * 根据传入的日期字符串获取结束日期字符串
+ * @param {string}} dateStr 日期字符串 YYYY-MM || YYYY-MM-DD
+ */
+function getEndTime (dateStr) {
+  let [ year, month, day ] = dateStr.split('-')
+
+  // 传入的是 YYYY-MM-DD
+  if (day) {
+    return Date.parse(dateStr) + 86400000
+  }
+
+  // 传入的是 YYYY-MM
+  month = Number(month) + 1
+  // 如果是 12 月，则加载明年一月前数据
+  if (month > 12) {
+    year = Number(year) + 1
+    month = '01'
+  }
+  return Date.parse(`${year}-${_pad(month)}`)
+}
+
 export {
   getYMDTime,
   getHMSTime,
-  getYMDWHMSTime
+  getYMDWHMSTime,
+  getEndTime
 }
