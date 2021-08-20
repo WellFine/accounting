@@ -1,6 +1,12 @@
 <view class="container">
   <!-- 这里多嵌套了一层是为了使粘滞定位生效 -->
   <view class="header">
-    <com-header />
+    <com-header isLoading="{{ isLoading }}" bind:details="details" />
   </view>
+  <view class="body" wx:if="{{ list.length > 0 }}">
+    <block wx:for="{{list}}" wx:key="_id">
+      <com-item data="{{item.data}}" time="{{item._id}}" />
+    </block>
+  </view>
+  <view wx:else class="no-data">暂无收支记录</view>
 </view>

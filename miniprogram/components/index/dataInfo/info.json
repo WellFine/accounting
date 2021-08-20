@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "com-header": "./header/header"
+    "com-header": "./header/header",
+    "com-item": "./item/item"
   }
 }

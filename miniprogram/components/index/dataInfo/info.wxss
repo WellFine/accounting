@@ -2,3 +2,9 @@
   position: sticky;
   top: 10rpx;
 }
+
+.container .no-data {
+  color: #c0c0c0;
+  text-align: center;
+  margin-top: 20rpx;
+}
