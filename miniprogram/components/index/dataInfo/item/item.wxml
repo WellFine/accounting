@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <view class="time">{{ timeStr }}</view>
+    <view class="expend-income">
+      <view class="expend" wx:if="{{ expend !== '0.00' }}">
+        <text>出</text>
+        <text>{{ expend }}</text>
+      </view>
+      <view class="income" wx:if="{{ income !== '0.00' }}">
+        <text>入</text>
+        <text>{{ income }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="data" wx:for="{{ list }}">
+      <com-icon class="icon" type="{{ item.py }}"></com-icon>
+      <view class="info">
+        <view class="name-money">
+          <text class="name">{{ item.name + (item.sub ? (' - ' + item.sub) : '') }}</text>
+          <text class="money">{{ (item.type === 0 ? '- ' : '+ ') + item.money }}</text>
+        </view>
+        <view class="remark">{{(item.how ? (item.how !== '略' ? (item.how + ' | ') : '') : '') + (item.remark ? item.remark : '')}}</view>
+      </view>
+    </view>
+  </view>
+</view>

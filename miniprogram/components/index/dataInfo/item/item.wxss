@@ -1,0 +1,76 @@
+.container {
+  box-shadow: 0 0 10rpx 5rpx rgba(94, 73, 73, 0.1);
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+}
+
+.container .header,
+.container .body {
+  padding: 20rpx 30rpx;
+}
+
+.container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+.header .expend-income {
+  display: flex;
+  font-size: 28rpx;
+}
+.expend-income .expend text:first-child,
+.expend-income .income text:first-child {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+  padding: 4rpx;
+}
+.expend-income .expend text:first-child {
+  background: #d9f7be;
+  color: #73d13d;
+}
+.expend-income .income text:first-child {
+  background: #ffccc7;
+  color: #ff4d4f;
+}
+.expend-income .income {
+  margin-left: 30rpx;
+}
+
+.container .body {
+  display: flex;
+  flex-direction: column;
+}
+.body .data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.body .data:first-child {
+  margin-top: 0;
+}
+.data .icon {
+  margin-right: 20rpx;
+}
+.data .info {
+  flex: 1;
+}
+.info .name-money {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.name-money .money {
+  font-weight: 500;
+}
+.info .remark {
+  max-width: 500rpx;
+  font-size: 26rpx;
+  color: #d0d0d0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
