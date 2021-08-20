@@ -1,0 +1,36 @@
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.line text {
+  display: inline-block;
+  width: 10%;
+  animation: line 1s linear infinite;
+}
+.line text:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.line text:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.line text:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.line text:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.line text:nth-child(5) {
+  animation-delay: 1s;
+}
+
+@keyframes line {
+  0%, 100% {
+    opacity: 0.3;
+    height: 50%;
+  }
+  50% {
+    opacity: 1;
+    height: 100%;
+  }
+}

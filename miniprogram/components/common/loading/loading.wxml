@@ -1,0 +1,7 @@
+<view class="line" wx:if="{{ type === 'line' }}" style="width: {{ width }}rpx; height: {{ height }}rpx;">
+  <text style="background: {{ color }}"></text>
+  <text style="background: {{ color }}"></text>
+  <text style="background: {{ color }}"></text>
+  <text style="background: {{ color }}"></text>
+  <text style="background: {{ color }}"></text>
+</view>
