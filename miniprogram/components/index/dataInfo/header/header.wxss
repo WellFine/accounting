@@ -2,10 +2,11 @@
   box-sizing: border-box;
   width: 100%;
   border-radius: 20rpx;
-  box-shadow: 0 0 10rpx 5rpx rgba(94, 73, 73, 0.2);
+  box-shadow: 0 0 10rpx 5rpx rgba(94, 73, 73, 0.1);
   padding: 20rpx 30rpx;
   display: flex;
   justify-content: space-between;
+  background: #fff;
 }
 
 .container .flex {
@@ -47,8 +48,8 @@
 .type .box {
   width: 180rpx;
   background: #fff;
-  padding: 20rpx;
-  margin-bottom: 20rpx;
+  padding: 18rpx;
+  margin: 0 10rpx 20rpx;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -65,7 +66,7 @@
 .type .box-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: center;
 }
 .type .type-icon {
   margin-top: 6rpx;

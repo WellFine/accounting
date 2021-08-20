@@ -2,14 +2,19 @@ import { getYMDTime } from '../../../../utils/date'
 import { incomeType, expendType, otherType } from '../../../../config/type'
 
 Component({
+  properties: {
+    isLoading: Boolean
+  },
   data: {
     date: '',
+    dateEnd: '',  // 控制能选择月份的范围为从前到现在
     dateStr: '',
-    type: '全部类型',
+    type: '',
+    typeName: '全部类型',
     isSelectType: false,
     income: incomeType,
     expend: expendType,
-    other: otherType
+    other: otherType,
   },
   lifetimes: {
     attached () {
@@ -17,17 +22,50 @@ Component({
 
       this.setData({
         date: `${year}-${monthStr}`,
+        dateEnd: `${year}-${monthStr}`,
         dateStr: `${year} 年 ${monthStr} 月`
+      })
+      
+      const { type, typeName, date } = this.data
+      this.triggerEvent('details', {
+        type,
+        name: typeName,
+        date
       })
     }
   },
   methods: {
     changeTime (e) {
       const { value } = e.detail
-      const date = value.split('-')
+      const [ year, month ] = value.split('-')
+
       this.setData({
-        date: `${date[0]}-${date[1]}`,
-        dateStr: `${date[0]} 年 ${date[1]} 月`
+        date: value,
+        dateStr: `${year} 年 ${month} 月`
+      })
+
+      const { type, typeName } = this.data
+      this.triggerEvent('details', {
+        type,
+        name: typeName,
+        date: value
+      })
+    },
+
+    changeType (e) {
+      // type 代表类型，0 支出，1 收入，2 不计入收支
+      const { type, typename } = e.currentTarget.dataset
+      
+      this.setData({
+        type,
+        typeName: typename,
+        isSelectType: false
+      })
+
+      this.triggerEvent('details', {
+        type,
+        name: typename,
+        date: this.data.date
       })
     },
 
@@ -39,19 +77,6 @@ Component({
 
     closeSelectType () {
       this.setData({
-        isSelectType: false
-      })
-    },
-
-    clickoverlay () {
-      this.closeSelectType()
-    },
-
-    changeType (e) {
-      // title 代表类型，0 支出，1 收入，2 不计入收支
-      const { title, type } = e.currentTarget.dataset
-      this.setData({
-        type,
         isSelectType: false
       })
     }
