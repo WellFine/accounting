@@ -1,10 +1,9 @@
 /**
- * 将金额格式化为小数点后两位
- * @param {string} money 金额数值字符串
+ * 限制金额只能有一个小数点且小数点后数字不超过 2 位
+ * @param {number} money 金额数值
  */
-function moneyFormat (money) {
-  // 以小数点为分隔, 保证只有一个小数点且第一个小数点后数字不超 2 位
-  const arr = money.split('.')
+function makeMoneyTrue (money) {
+  const arr = String(money).split('.')
   let [ integer, decimal ] = arr
 
   // 如果以 0 开头且长度大于 1, 则删除开头的 0
@@ -22,6 +21,40 @@ function moneyFormat (money) {
   return money
 }
 
+/**
+ * 将金额格式化为每隔三位数字加一个指定字符串
+ * @param {number} money 金额数值
+ * @param {string} str 每隔三个数字添加的字符
+ */
+function moneyFormat (money, str) {
+  let [ integer, decimal ] = String(money).split('.')
+  let format = ''
+
+  let length = integer.length
+
+  for (let i = length % 3, j = 0; i <= length; j = i, i += 3) {
+    if (i === 0) continue
+    format += `${integer.slice(j, i)}${str}`
+  }
+  
+  return `${format.slice(0, format.length - str.length)}.${decimal}`
+}
+
+/**
+ * 将金额变为 xxx.xx 的字符串格式
+ * @param {number} money 金额数值
+ */
+function padMoney (money) {
+  const [ integer, decimal] = String(money).split('.')
+
+  // decimal 存在证明有小数点
+  if (decimal) return `${integer}.${decimal.padEnd(2, 0)}`
+
+  return `${integer}.00`
+}
+
 export {
-  moneyFormat
+  makeMoneyTrue,
+  moneyFormat,
+  padMoney
 }
