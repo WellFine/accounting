@@ -15,11 +15,16 @@ Component({
     }
   },
 
+  observers: {
+    'use, leftover': function (use, leftover) {
+      if (Number(leftover) <= 0 || Number(use) == 0) this.initCharts(0)
+      else this.initCharts(leftover / use)
+    }
+  },
+
   lifetimes: {
-    attached () {
-      const { use, leftover } = this.properties
+    created () {
       this.ecComponent = this.selectComponent('#charts-dom')
-      this.initCharts(leftover / use)
     }
   },
 
