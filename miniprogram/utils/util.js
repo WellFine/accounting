@@ -12,6 +12,16 @@ function toast (title, icon = 'none', duration = 1000) {
   })
 }
 
+/**
+ * 返回正确精度的差
+ * @param {number} minuend 被减数
+ * @param {number} subtraction 减数
+ */
+function subtraction (minuend, subtraction) {
+  return (minuend * 100 - subtraction * 100) / 100
+}
+
 export {
-  toast
+  toast,
+  subtraction
 }
