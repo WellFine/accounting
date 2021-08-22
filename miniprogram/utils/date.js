@@ -24,9 +24,7 @@ function _getWeek (date) {
   return date.getDay() === 0 ? 7 : date.getDay()
 }
 
-function getYMDTime (date = null) {
-  date = date ? date : new Date
-
+function getYMDTime (date = new Date) {
   return {
     year: date.getFullYear(),
     month: _getMonth(date),
@@ -36,9 +34,7 @@ function getYMDTime (date = null) {
   }
 }
 
-function getHMSTime (date = null) {
-  date = date ? date : new Date
-
+function getHMSTime (date = new Date) {
   return {
     hour: date.getHours(),
     hourStr: _getHourStr(date),
@@ -49,13 +45,27 @@ function getHMSTime (date = null) {
   }
 }
 
-function getYMDWHMSTime (date = null) {
-  date = date ? date : new Date
-
+function getYMDWHMSTime (date = new Date) {
   return {
     ...getYMDTime(date),
     week: _getWeek(date),
     ...getHMSTime(date)
+  }
+}
+
+/**
+ * 获取时间戳
+ * @param {Object} date date 对象
+ * @param {string} type 获取月时间戳或者天时间戳
+ */
+function getTimestamp (date = new Date, type = 'month') {
+  const { year, monthStr, dayStr } = getYMDTime(date)
+
+  const dateStr = (type === 'month') ? `${year}-${monthStr}` : `${year}-${monthStr}-${dayStr}`
+
+  return {
+    beginTime: Date.parse(dateStr),
+    endTime: getEndTime(dateStr)
   }
 }
 
@@ -85,5 +95,6 @@ export {
   getYMDTime,
   getHMSTime,
   getYMDWHMSTime,
+  getTimestamp,
   getEndTime
 }
