@@ -91,10 +91,33 @@ function getEndTime (dateStr) {
   return Date.parse(`${year}-${_pad(month)}`)
 }
 
+/**
+ * 获取本月剩余天数
+ * @param {Object} date Date 日期对象
+ */
+function getMonthLeftoverDay (date = new Date) {
+  const dayInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  
+  const { year, month, day } = getYMDTime(date)
+  
+  if (isLeapYear(year)) dayInMonth[1]++
+  
+  return dayInMonth[month - 1] - day + 1
+}
+
+/**
+ * 判断是否为闰年
+ * @param {number}} year 年份
+ */
+function isLeapYear (year) {
+  return Number.isInteger(year / 4) && Number.isInteger(year / 400)
+}
+
 export {
   getYMDTime,
   getHMSTime,
   getYMDWHMSTime,
   getTimestamp,
-  getEndTime
+  getEndTime,
+  getMonthLeftoverDay
 }
