@@ -8,5 +8,6 @@
       <com-item data="{{item.data}}" time="{{item._id}}" />
     </block>
   </view>
-  <view wx:else class="no-data">暂无收支记录</view>
+  <view wx:else class="no-data">{{isNetworkError ? '网络出错啦' : '暂无收支记录'}}</view>
+  <button wx:if="{{ isNetworkError }}" class="network-error-btn" bind:tap="reload">重新加载收支详情</button>
 </view>
