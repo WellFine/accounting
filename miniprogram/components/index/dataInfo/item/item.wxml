@@ -18,7 +18,7 @@
       <view class="info">
         <view class="name-money">
           <text class="name">{{ item.name + (item.sub ? (' - ' + item.sub) : '') }}</text>
-          <text class="money">{{ (item.type === 0 ? '- ' : '+ ') + item.money }}</text>
+          <text class="money">{{ (item.type === 0 ? '- ' : (item.type === 1 ? '+ ' : '不计入收支 ')) + item.money }}</text>
         </view>
         <view class="remark">{{(item.how ? (item.how !== '略' ? (item.how + ' | ') : '') : '') + (item.remark ? item.remark : '')}}</view>
       </view>
