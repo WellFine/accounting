@@ -162,8 +162,9 @@ Page({
       this.setData({
         isAdd: false
       })
-      wx.navigateBack({
-        delta: 1,
+
+      wx.reLaunch({
+        url: '/pages/index/index',
       })
     }).catch(() => {
       wx.showToast({
