@@ -6,23 +6,21 @@ Component({
     expend: String
   },
 
+  observers: {
+    'income, expend': function (income, expend) {
+      this.ecComponent = this.selectComponent('#charts-dom')
+      this.initCharts(income, expend)
+    }
+  },
+
   data: {
     ec: {
       lazyLoad: true
     }
   },
 
-  lifetimes: {
-    attached () {
-      this.ecComponent = this.selectComponent('#charts-dom')
-      this.initCharts()
-    }
-  },
-
   methods: {
-    initCharts () {
-      const { income, expend } = this.properties
-
+    initCharts (income, expend) {
       this.ecComponent.init((canvas, width, height, dpr) => {
         // 初始化图表
         const chart = echarts.init(canvas, null, {
