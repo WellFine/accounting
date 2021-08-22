@@ -1,45 +1,13 @@
 <com-total-money money="{{ totalMoney }}" />
 
-<com-income-expend income="{{ income }}" expend="{{ expend }}" />
+<com-income-expend wx:if="{{ !isNetworkError }}" income="{{ income }}" expend="{{ expend }}" />
 
-<swiper autoplay>
-  <swiper-item>
-    <com-can-use-money 
-      use="{{ monthCanUseMoney }}" useText="本月可支配金额"
-      leftover="{{ monthLeftoverMoney }}" leftoverText="本月剩余可支配"
-    />
-  </swiper-item>
-  <swiper-item>
-    <com-can-use-money
-      use="{{ dayCanUseMoney }}" useText="每日可支配金额"
-      leftover="{{ dayLeftoverMoney }}" leftoverText="今日剩余可支配"
-    />
-  </swiper-item>
-</swiper>
+<button wx:if="{{ isNetworkError }}" class="reload-btn" loading="{{ isReloading }}" bind:tap="reload">重新加载收入与支出</button>
 
-<com-data-info class="data" />
+<!-- wx:if="{{ monthCanUseMoney && monthLeftoverMoney }}" 判断用于 monthLeftoverMoney 变化时重绘水球图 -->
+<com-can-use-money wx:if="{{ monthCanUseMoney && monthLeftoverMoney && !isNetworkError }}"
+  use="{{ monthCanUseMoney }}" useText="本月可支配金额"
+  leftover="{{ monthLeftoverMoney }}" leftoverText="{{ monthLeftoverMoney >= 0 ? '本月剩余可支配' : '本月已超支' }}"
+/>
 
-
-<!-- <view style="display: flex; flex-wrap: wrap;">
-  <com-icon type="canyin" />
-  <com-icon type="licai" />
-  <com-icon type="yundon" />
-  <com-icon type="yule" />
-  <com-icon type="gongzi" />
-  <com-icon type="renqing" />
-  <com-icon type="gouwu" />
-  <com-icon type="yiliao" />
-  <com-icon type="qita" />
-  <com-icon type="lvxing" />
-  <com-icon type="touzi" />
-  <com-icon type="hongbao" />
-  <com-icon type="shengyi" />
-  <com-icon type="chongwu" />
-  <com-icon type="kuan" />
-  <com-icon type="jiaoton" />
-  <com-icon type="baoxian" />
-  <com-icon type="jiangjin" />
-  <com-icon type="jiaofei" />
-  <com-icon type="zhuanzhang" />
-  <com-icon type="baoxiao" />
-</view> -->
+<com-data-info />

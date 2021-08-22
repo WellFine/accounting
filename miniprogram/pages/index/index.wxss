@@ -10,3 +10,10 @@ page {
   padding: 0 50rpx 20rpx;
   /* background: var(--theme-color); */
 }
+
+.reload-btn {
+  width: 100% !important;
+  margin: 30rpx 0;
+  color: #fff;
+  background: #ff7875;
+}
