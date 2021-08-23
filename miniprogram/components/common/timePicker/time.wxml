@@ -1,0 +1,6 @@
+<view class="time">
+  <picker
+    header-text="请选择日期" mode="date" value="{{date}}" end="{{dateEnd}}" fields="{{ fields }}"
+    bind:change="changeTime"
+  >{{dateStr}}</picker>
+</view>
