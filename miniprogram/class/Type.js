@@ -35,7 +35,7 @@ class Shopping extends Type {
 }
 
 class Pay extends Type {
-  sub = ['电费', '水费', '话费', '燃气费', '油费', '宽带', '物业', '房贷', '团费', '党费', '学费', '其它']
+  sub = ['电费', '水费', '话费', '燃气费', '油费', '停车费', '宽带', '物业', '房贷', '团费', '党费', '学费', '其它']
 
   constructor () {
     super('缴费', 'jiaofei')
@@ -82,6 +82,14 @@ class Pet extends Type {
   }
 }
 
+class Medical extends Type {
+  sub = ['就医', '拿药', '换药', '挂号', '其它']
+
+  constructor () {
+    super('医疗', 'yiliao')
+  }
+}
+
 class HumanFeelings extends Type {
   sub = ['聚餐', '请客', '礼物']
 
@@ -109,6 +117,7 @@ export {
   Sport,
   Invest,
   Pet,
+  Medical,
   HumanFeelings,
   Insurance
 }
