@@ -1,6 +1,6 @@
 <view class="container">
-  <view class="money">
-    <text class="">小金库</text>
+  <view class="money" bind:tap="goToSettingPage">
+    <text class="">账户余额</text>
     <text>￥{{money}}</text>
   </view>
   <view class="add" bind:tap="goToAddPage">

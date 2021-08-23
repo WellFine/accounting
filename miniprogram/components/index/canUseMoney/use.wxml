@@ -1,6 +1,6 @@
 <view class="container">
   <view class="money">
-    <com-text-money text="{{ useText }}" money="{{ use }}" />
+    <com-text-money text="{{ useText }}" money="{{ use }}" bind:tap="goToSettingPage" />
     <com-text-money text="{{ leftoverText }}" money="{{ leftover }}" />
   </view>
   <view class="water-ball">
