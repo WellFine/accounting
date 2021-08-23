@@ -1,4 +1,3 @@
-import { getYMDTime } from '../../utils/date'
 import { makeMoneyTrue } from '../../utils/money'
 import { expendType, incomeType, otherType } from '../../config/type'
 import { getAccount, setAccount } from '../../utils/storage'
@@ -8,8 +7,6 @@ Page({
     type: 0,  // 0 支出，1 收入，2 不计入收支
 
     date: '',
-    dateEnd: '',
-    dateStr: '',
 
     money: '',
     // 收支记账的账户
@@ -34,10 +31,6 @@ Page({
     isAdd: false
   },
 
-  onLoad () {
-    this._initTime()
-  },
-
   // 切换头部收支类型
   switchType (e) {
     const { type } = e.currentTarget.dataset
@@ -59,17 +52,8 @@ Page({
   
   // 改变时间
   changeTime (e) {
-    const { value } = e.detail
-    const [ year, month, day ] = value.split('-')
-    let dateStr = `${month}月${day}日`
-    
-    if (year < getYMDTime().year) {
-      dateStr = `${year}年${dateStr}`
-    }
-
     this.setData({
-      date: `${year}-${month}-${day}`,
-      dateStr
+      date: e.detail
     })
   },
 
@@ -174,16 +158,6 @@ Page({
         title: '网络可能出错啦',
         icon: 'none'
       })
-    })
-  },
-
-  _initTime () {
-    const { year, monthStr, dayStr } = getYMDTime()
-
-    this.setData({
-      date: `${year}-${monthStr}-${dayStr}`,
-      dateEnd: `${year}-${monthStr}-${dayStr}`,
-      dateStr: `${monthStr}月${dayStr}日`
     })
   },
 

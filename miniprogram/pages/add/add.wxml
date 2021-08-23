@@ -4,12 +4,7 @@
     <text class="{{type === 1 ? 'income' : 'normal'}}" data-type="{{1}}" bind:tap="switchType">收入</text>
     <text class="{{type === 2 ? 'other' : 'normal'}}" data-type="{{2}}" bind:tap="switchType">不计入收支</text>
   </view>
-  <view class="time">
-    <picker
-      header-text="请选择日期" mode="date" value="{{date}}" end="{{dateEnd}}"
-      bind:change="changeTime"
-    >{{dateStr}}</picker>
-  </view>
+  <com-time-picker fields="day" bind:time="changeTime" />
 </view>
 
 <view class="money row-null-center">
