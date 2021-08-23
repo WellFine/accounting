@@ -13,7 +13,10 @@ function makeMoneyTrue (money) {
   }
 
   // 如果小数点后的数字超过两位, 则保留两位
-  if (decimal && decimal.length > 2) money = `${integer}.${decimal.slice(0, 2)}`
+  if (decimal && decimal.length > 2) {
+    decimal = decimal.slice(0, 2)
+    money = `${integer}.${decimal}`
+  }
   
   // 只能输入一个小数点
   if (arr.length > 2) money = `${integer}.${decimal}`
