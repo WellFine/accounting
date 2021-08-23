@@ -1,0 +1,60 @@
+.prompt {
+  color: #ff4d4f;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.account .wechat {
+  color: #52c41a;
+  background: #d9f7be;
+}
+.account .alipay {
+  color: #1890ff;
+  background: #bae7ff;
+}
+.account .bank {
+  color: #f5222d;
+  background: #ffccc7;
+}
+.account .cash {
+  color: #13c2c2;
+  background: #b5f5ec;
+}
+.account .box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+}
+.box input {
+  flex: 1;
+  max-width: 75%;
+  height: 100%;
+  margin-left: 30rpx;
+  font-size: 50rpx;
+}
+
+.month {
+  color: #722ed1;
+  background: #efdbff;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+}
+.month input {
+  flex: 1;
+  height: 100%;
+  margin-left: 30rpx;
+  font-size: 50rpx;
+}
+
+.btn {
+  color: #eb2f96;
+  background: #ffd6e7;
+  margin-top: 50rpx;
+}

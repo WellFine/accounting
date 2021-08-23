@@ -1,0 +1,29 @@
+<view class="account">
+  <view class="wechat box">
+    <text>微信</text>
+    <input type="digit" value="{{ wechat }}" data-type="wechat" bind:input="onInput" />
+  </view>
+  <view class="alipay box">
+    <text>支付宝</text>
+    <input type="digit" value="{{ alipay }}" data-type="alipay" bind:input="onInput" />
+  </view>
+  <view class="bank box">
+    <text>银行卡</text>
+    <input type="digit" value="{{ bank }}" data-type="bank" bind:input="onInput" />
+  </view>
+  <view class="cash box">
+    <text>现金</text>
+    <input type="digit" value="{{ cash }}" data-type="cash" bind:input="onInput" />
+  </view>
+</view>
+
+<view class="prompt">
+  本页面设置的数据将缓存在本地，不会上传至服务器
+</view>
+
+<view class="month">
+  <text>月可支配金额</text>
+  <input type="digit" value="{{ monthMoney }}" data-type="monthMoney" bind:input="onInput" />
+</view>
+
+<button class="btn" bind:tap="clickBtn">确定</button>
