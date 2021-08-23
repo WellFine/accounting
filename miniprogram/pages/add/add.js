@@ -1,6 +1,7 @@
 import { getYMDTime } from '../../utils/date'
 import { makeMoneyTrue } from '../../utils/money'
 import { expendType, incomeType, otherType } from '../../config/type'
+import { getAccount, setAccount } from '../../utils/storage'
 
 Page({
   data: {
@@ -163,6 +164,8 @@ Page({
         isAdd: false
       })
 
+      this._loadStorage(account, type, money)
+
       wx.reLaunch({
         url: '/pages/index/index',
       })
@@ -181,6 +184,17 @@ Page({
       date: `${year}-${monthStr}-${dayStr}`,
       dateEnd: `${year}-${monthStr}-${dayStr}`,
       dateStr: `${monthStr}月${dayStr}日`
+    })
+  },
+
+  _loadStorage (account, type, money) {
+    const accountObj = getAccount()
+
+    if (type === 0) accountObj[`${account}`] -= Number(money)
+    if (type === 1) accountObj[`${account}`] += Number(money)
+
+    setAccount({
+      ...accountObj
     })
   }
 })
