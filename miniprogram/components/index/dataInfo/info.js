@@ -6,7 +6,7 @@ Component({
   data: {
     list: [],
     isLoading: true,
-    type: 0,
+    type: -1,   // -1 表示全部类型，0 表示支出，1 表示收入，2 表示不计入收支
     name: '',
     beginTime: '',
     endTime: '',

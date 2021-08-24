@@ -9,7 +9,7 @@ Component({
     date: '',
     dateEnd: '',  // 控制能选择月份的范围为从前到现在
     dateStr: '',
-    type: '',
+    type: -1,   // -1 表示全部类型，0 表示支出，1 表示收入，2 表示不计入收支
     typeName: '全部类型',
     isSelectType: false,
     income: incomeType,

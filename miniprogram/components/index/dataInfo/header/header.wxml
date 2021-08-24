@@ -22,11 +22,11 @@
       <view class="text">请选择类型</view>
     </view>
     <scroll-view class="type" scroll-y>
-      <view class="all box {{typeName === '全部类型' ? 'box-active' : ''}}" data-type="" data-typeName="全部类型" bind:tap="changeType">全部类型</view>
+      <view class="all box {{typeName === '全部类型' ? 'box-active' : ''}}" data-type="{{ -1 }}" data-typeName="全部类型" bind:tap="changeType">全部类型</view>
       <view class="expend">
         <text class="title">支出</text>
         <view class="box-container">
-          <view wx:for="{{expend}}" wx:key="name" class="box {{typeName === item.type ? 'box-active' : ''}}" data-type="0" data-typeName="{{item.type}}" bind:tap="changeType">
+          <view wx:for="{{expend}}" wx:key="name" class="box {{typeName === item.type ? 'box-active' : ''}}" data-type="{{ 0 }}" data-typeName="{{item.type}}" bind:tap="changeType">
             <com-icon type="{{item.py}}" class="type-icon"></com-icon>
             <text>{{item.type}}</text>
           </view>
@@ -35,7 +35,7 @@
       <view class="income">
         <text class="title">收入</text>
         <view class="box-container">
-          <view wx:for="{{income}}" wx:key="name" class="box {{typeName === item.type ? 'box-active' : ''}}" data-type="1" data-typeName="{{item.type}}" bind:tap="changeType">
+          <view wx:for="{{income}}" wx:key="name" class="box {{typeName === item.type ? 'box-active' : ''}}" data-type="{{ 1 }}" data-typeName="{{item.type}}" bind:tap="changeType">
             <com-icon type="{{item.py}}" class="type-icon"></com-icon>
             <text>{{item.type}}</text>
           </view>
@@ -44,7 +44,7 @@
       <view class="other">
         <text class="title">不计入收支</text>
         <view class="box-container">
-          <view wx:for="{{other}}" wx:key="name" class="box {{typeName === item.type ? 'box-active' : ''}}" data-type="2" data-typeName="{{item.type}}" bind:tap="changeType">
+          <view wx:for="{{other}}" wx:key="name" class="box {{typeName === item.type ? 'box-active' : ''}}" data-type="{{ 2 }}" data-typeName="{{item.type}}" bind:tap="changeType">
             <com-icon type="{{item.py}}" class="type-icon"></com-icon>
             <text>{{item.type}}</text>
           </view>

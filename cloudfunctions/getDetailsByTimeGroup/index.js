@@ -14,11 +14,11 @@ const $ = _.aggregate
 exports.main = async event => {
   const { OPENID } = cloud.getWXContext()
   const { type, name, beginTime, endTime } = event
-  
+
   return await collection.aggregate()
     .match({
       _openid: OPENID,
-      type: type.length ? Number(type) : undefined,
+      type: type === -1 ? undefined : type,   // -1 表示全部类型，0 表示支出，1 表示收入，2 表示不计入收支
       name: name ? (name === '全部类型' ? undefined : name) : undefined,
       time: _.and(_.gte(beginTime), _.lt(endTime))  // match 不可使用聚合操作符，只能使用查询操作符
     })
