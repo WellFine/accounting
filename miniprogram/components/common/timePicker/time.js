@@ -38,6 +38,8 @@ Component({
         dateEnd: date,
         dateStr
       })
+
+      this.triggerEvent('time', this.data.date)
     }
   },
 
