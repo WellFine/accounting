@@ -45,7 +45,8 @@ Component({
         type,
         name,
         beginTime,
-        endTime
+        endTime,
+        isNeedDetails: true
       }).then(res => {
         const { list } = res.result
         this.setData({

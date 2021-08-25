@@ -13,7 +13,7 @@ const $ = _.aggregate
 // 云函数入口函数
 exports.main = async event => {
   const { OPENID } = cloud.getWXContext()
-  const { type, name, beginTime, endTime } = event
+  const { type, name, beginTime, endTime, isNeedDetails, isNeedTotalMoney } = event
 
   return await collection.aggregate()
     .match({
@@ -24,7 +24,7 @@ exports.main = async event => {
     })
     .group({
       _id: '$time',  // 根据 time 字段分组
-      data: $.push({
+      data: isNeedDetails ? $.push({
         account: '$account',
         money: '$money',
         type: '$type',
@@ -34,7 +34,8 @@ exports.main = async event => {
         how: '$how',
         time: '$time',
         remark: '$remark'
-      })
+      }) : undefined,
+      money: isNeedTotalMoney ? $.sum('$money') : undefined
     })
     .sort({
       _id: -1   // -1 为降序，1 为升序
