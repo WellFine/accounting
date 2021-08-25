@@ -19,7 +19,7 @@ class Food extends Type {
 }
 
 class Vehicle extends Type {
-  sub = ['共享单车', '公交', '地铁', '打车', '共享汽车', '高铁', '火车', '飞机', '其它']
+  sub = ['共享单车', '公交', '地铁', '打车', '共享汽车', '高铁', '火车', '飞机', '大巴', '其它']
 
   constructor () {
     super('交通', 'jiaoton')
@@ -27,10 +27,26 @@ class Vehicle extends Type {
 }
 
 class Shopping extends Type {
-  sub = ['日用品', '衣服', '鞋子', '食材', '水果', '饮料', '电子产品', '娱乐产品', '其它']
+  sub = ['日用品', '烹饪食材', '水果', '零食', '食品', '饮料', '电子产品', '娱乐产品', '其它']
 
   constructor () {
     super('购物', 'gouwu')
+  }
+}
+
+class Apparel extends Type {
+  sub = ['衣服', '裤子', '鞋子', '其它']
+
+  constructor () {
+    super('服饰', 'fushi')
+  }
+}
+
+class Educate extends Type {
+  sub = ['学费', '网课费用', '其它']
+
+  constructor () {
+    super('教育', 'jiaoyu')
   }
 }
 
@@ -43,7 +59,7 @@ class Pay extends Type {
 }
 
 class Daily extends Type {
-  sub = ['快递', '理发', '会员']
+  sub = ['快递', '理发', '会员', '买优惠券', '其它']
 
   constructor () {
     super('日常', 'richang')
@@ -111,6 +127,8 @@ export {
   Food,
   Vehicle,
   Shopping,
+  Apparel,
+  Educate,
   Pay,
   Daily,
   Entertainment,

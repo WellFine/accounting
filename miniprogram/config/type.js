@@ -1,4 +1,4 @@
-import { Type, Food, Invest, Vehicle, Shopping, Pay, Entertainment, Sport, Pet, HumanFeelings, Insurance, Daily, Medical } from '../class/Type'
+import { Type, Food, Invest, Vehicle, Shopping, Pay, Entertainment, Sport, Pet, HumanFeelings, Insurance, Daily, Medical, Apparel, Educate } from '../class/Type'
 
 const qita = new Type('其它', 'qita')
 
@@ -36,6 +36,10 @@ const jiaoton = new Vehicle
 
 const gouwu = new Shopping
 
+const fushi = new Apparel
+
+const jiaoyu = new Educate
+
 const jiaofei = new Pay
 
 const richang = new Daily
@@ -60,6 +64,8 @@ const expendType = [
   canyin,
   jiaoton,
   gouwu,
+  fushi,
+  jiaoyu,
   jiaofei,
   richang,
   yule,
