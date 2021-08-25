@@ -20,7 +20,7 @@ exports.main = async event => {
       name,
       py,
       time,
-      money: money * 1, // money * 1 可以保证 money 一定为 number 类型
+      money: money * 100, // money * 100 可以保证 money 一定为 number 类型，且将精度单位变为分以保障精度正确
       account,
       remark,
       sub,

@@ -6,8 +6,6 @@
  */
 page {
   --theme-color: #69c0ff;
-  box-sizing: border-box;
-  padding: 0 50rpx 20rpx;
   /* background: var(--theme-color); */
 }
 

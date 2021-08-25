@@ -48,8 +48,8 @@ Page({
       endTime
     }).then(res => {
       const { list } = res.result,
-            expend = padMoney(list[0].money * 100 / 100),
-            income = padMoney(list[1].money * 100 / 100)
+            expend = padMoney(list[0].money / 100),
+            income = padMoney(list[1].money / 100)
       
       // 加载月剩余可支配金额
       this._loadMonthLeftoverMoney(expend)

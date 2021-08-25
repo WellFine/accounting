@@ -15,16 +15,9 @@ Component({
   },
 
   observers: {
-    'data': function (data) {
-      this._initData(data)
-    }
-  },
-
-  lifetimes: {
-    attached () {
-      const { data, time } = this.properties
+    'data, time': function (data, time) {
       const { monthStr, dayStr } = getYMDTime(new Date(time))
-      
+        
       this._initData(data)
       
       this.setData({
@@ -38,9 +31,9 @@ Component({
       let expend = 0, income = 0
 
       for (const item of data) {
-        if (item.type === 0) expend += item.money * 100
-        if (item.type === 1) income += item.money * 100
-        item.money = padMoney(item.money)
+        if (item.type === 0) expend += item.money
+        if (item.type === 1) income += item.money
+        item.money = padMoney(item.money / 100)
       }
 
       this.setData({
