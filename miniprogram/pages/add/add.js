@@ -164,8 +164,11 @@ Page({
   _loadStorage (account, type, money) {
     const accountObj = getAccount()
 
-    if (type === 0) accountObj[`${account}`] -= Number(money)
-    if (type === 1) accountObj[`${account}`] += Number(money)
+    if (type === 0) {
+      accountObj[`${account}`] -= money * 100
+      if (accountObj[`${account}`] < 0) accountObj[`${account}`] = 0
+    }
+    if (type === 1) accountObj[`${account}`] += money * 100
 
     setAccount({
       ...accountObj

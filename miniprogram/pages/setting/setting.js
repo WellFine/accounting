@@ -28,13 +28,13 @@ Page({
     const { wechat, alipay, bank, cash, monthMoney } = this.data
     
     setAccount({
-      wechat: Number(wechat),
-      alipay: Number(alipay),
-      bank: Number(bank),
-      cash: Number(cash)
+      wechat: wechat * 100,
+      alipay: alipay * 100,
+      bank: bank * 100,
+      cash: cash * 100
     })
 
-    setMonthCanUseMoney(Number(monthMoney))
+    setMonthCanUseMoney(monthMoney * 100)
 
     wx.reLaunch({
       url: '/pages/index/index'
@@ -45,16 +45,16 @@ Page({
     const { wechat, alipay, bank, cash } = getAccount()
 
     this.setData({
-      wechat: padMoney(wechat),
-      alipay: padMoney(alipay),
-      bank: padMoney(bank),
-      cash: padMoney(cash)
+      wechat: padMoney(wechat / 100),
+      alipay: padMoney(alipay / 100),
+      bank: padMoney(bank / 100),
+      cash: padMoney(cash / 100)
     })
   },
 
   _initMonthMoney () {
     this.setData({
-      monthMoney: padMoney(getMonthCanUseMoney())
+      monthMoney: padMoney(getMonthCanUseMoney() / 100)
     })
   }
 })
