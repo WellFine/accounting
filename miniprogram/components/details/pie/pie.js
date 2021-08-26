@@ -68,6 +68,12 @@ Component({
     _setOption (chart) {
       const { data } = this.data
 
+      const total = data.reduce((prev, cur) => {
+        return {
+          money: prev.money + cur.money
+        }
+      })
+
       const option = {
         legend: {
           type: 'scroll'
@@ -101,9 +107,10 @@ Component({
             }
           },
           data: data.map(item => {
+            const percent = ((item.money / total.money) * 100).toFixed(2)
             return {
               value: item.money,
-              name: item._id
+              name: `${item._id} ${percent}%`
             }
           }),
         }]
