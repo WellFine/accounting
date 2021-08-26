@@ -1,5 +1,12 @@
 <view class="container">
-  <com-loading wx:if="{{ isLoading }}" />
-  <view wx:elif="{{ data.length === 0 }}">本月没有{{ type == 0 ? '支出' : (type == 1 ? '收入' : '不计入收支的') }}明细</view>
-  <ec-canvas class="chart" wx:else id="pie" canvas-id="charts" ec="{{ ec }}" />
+  <view class="main">
+    <com-loading wx:if="{{ isLoading }}" />
+    <view wx:elif="{{ data.length === 0 }}">本月没有{{ type == 0 ? '支出' : (type == 1 ? '收入' : '不计入收支的') }}明细</view>
+    <ec-canvas wx:else class="chart" id="pie" canvas-id="charts" ec="{{ ec }}" />
+  </view>
+
+  <view class="sub" wx:if="{{ isLoadSub }}">
+    <com-loading wx:if="{{ isLoadingSub }}" />
+    <ec-canvas wx:else class="chart" id="sub-pie" ec="{{ ecSub }}"></ec-canvas>
+  </view>
 </view>
