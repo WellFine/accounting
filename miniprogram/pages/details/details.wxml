@@ -1,2 +1,28 @@
-<!--miniprogram/pages/details/details.wxml-->
-<text>miniprogram/pages/details/details.wxml</text>
+<view class="time-picker">
+  <com-time-picker bind:time="changeTime" />
+</view>
+
+<view class="expend-income row-evenly-center">
+  <view class="expend column-null-center">
+    <text>共支出</text>
+    <view wx:if="{{ expend }}">￥{{ expend }}</view>
+    <com-loading wx:else width="100" height="50" />
+  </view>
+  <view class="income column-null-center">
+    <text>共收入</text>
+    <view wx:if="{{ income }}">￥{{ income }}</view>
+    <com-loading wx:else width="100" height="50" />
+  </view>
+</view>
+
+<view class="classify">
+  <view class="header row-between-center">
+    <text class="title">分类构成</text>
+    <view class="type">
+      <text class="expend {{ type == 0 ? 'active' : ''}}" data-type="{{ 0 }}" bind:tap="changeType">支出</text>
+      <text class="income {{ type == 1 ? 'active' : ''}}" data-type="{{ 1 }}" bind:tap="changeType">收入</text>
+      <text class="other {{ type == 2 ? 'active' : ''}}" data-type="{{ 2 }}" bind:tap="changeType">不计入收支</text>
+    </view>
+  </view>
+  <com-pie date="{{ date }}" type="{{ type }}" />
+</view>

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "com-time-picker": "/components/common/timePicker/time",
+    "com-pie": "/components/details/pie/pie"
+  }
 }
