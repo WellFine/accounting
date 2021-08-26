@@ -1,0 +1,8 @@
+<view class="header">
+  <text class="title">{{ title }}</text>
+  <view class="type">
+    <text class="expend {{ type == 0 ? 'active' : ''}}" data-type="{{ 0 }}" bind:tap="changeType">支出</text>
+    <text class="income {{ type == 1 ? 'active' : ''}}" data-type="{{ 1 }}" bind:tap="changeType">收入</text>
+    <text class="other {{ type == 2 ? 'active' : ''}}" data-type="{{ 2 }}" bind:tap="changeType">不计入收支</text>
+  </view>
+</view>

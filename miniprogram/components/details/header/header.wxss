@@ -1,0 +1,29 @@
+.header {
+  margin: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .type .expend,
+.header .type .income,
+.header .type .other {
+  padding: 10rpx 20rpx;
+  border-radius: 6rpx;
+  color: var(--normal-color);
+  background: var(--normal-background);
+}
+.header .type .income {
+  margin: 0 20rpx;
+}
+.header .type .expend.active {
+  color: var(--expend-color);
+  background: var(--expend-background);
+}
+.header .type .income.active {
+  color: var(--income-color);
+  background: var(--income-background);
+}
+.header .type .other.active {
+  color: var(--other-color);
+  background: var(--other-background);
+}
