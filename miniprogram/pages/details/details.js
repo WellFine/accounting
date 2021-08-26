@@ -9,7 +9,10 @@ Page({
     expend: '',
     income: '',
 
-    type: 0
+    // 分类构成类型
+    classifyType: 0,
+    // 每日对比类型
+    dailyComparisonType: 0
   },
 
   /**
@@ -25,9 +28,15 @@ Page({
     this._loadExpendIncome()
   },
 
-  changeType (e) {
+  changeClassifyType (e) {
     this.setData({
-      type: e.currentTarget.dataset.type
+      classifyType: e.detail
+    })
+  },
+
+  changeDailyComparisonType (e) {
+    this.setData({
+      dailyComparisonType: e.detail
     })
   },
 

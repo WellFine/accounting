@@ -9,7 +9,6 @@
   width: 100%;
   height: 170rpx;
   border-bottom: 10rpx solid #f0f0f0;
-  margin-bottom: 40rpx;
 }
 .expend-income .expend text:first-child,
 .expend-income .income text:first-child {
@@ -28,32 +27,3 @@
   color: var(--income-color);
 }
 /* 月支出与收入 end */
-
-/* 分类构成 start */
-.classify .header {
-  margin-bottom: 30rpx;
-}
-.header .type .expend,
-.header .type .income,
-.header .type .other {
-  padding: 10rpx 20rpx;
-  border-radius: 6rpx;
-  color: var(--normal-color);
-  background: var(--normal-background);
-}
-.header .type .income {
-  margin: 0 20rpx;
-}
-.header .type .expend.active {
-  color: var(--expend-color);
-  background: var(--expend-background);
-}
-.header .type .income.active {
-  color: var(--income-color);
-  background: var(--income-background);
-}
-.header .type .other.active {
-  color: var(--other-color);
-  background: var(--other-background);
-}
-/* 分类构成 end */

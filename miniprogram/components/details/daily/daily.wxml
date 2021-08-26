@@ -1,0 +1,5 @@
+<view class="container">
+  <com-loading wx:if="{{ isLoading }}" />
+  <view wx:elif="{{ data.length === 0 }}">本月没有{{ type == 0 ? '支出' : (type == 1 ? '收入' : '不计入收支的') }}明细</view>
+  <ec-canvas class="chart" wx:else id="daily-bar" canvas-id="charts" ec="{{ ec }}" />
+</view>
