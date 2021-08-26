@@ -204,6 +204,7 @@ Component({
         },
         series: [{
           type: 'pie',
+          roseType: 'radius',
           radius: ['25%', '70%'],
           center: ['50%', '55%'],
           itemStyle: {  // 设置扇形样式
