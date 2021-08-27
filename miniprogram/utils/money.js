@@ -48,12 +48,13 @@ function moneyFormat (money, str) {
  * @param {number} money 金额数值
  */
 function padMoney (money) {
-  const [ integer, decimal] = String(money).split('.')
+  // const [ integer, decimal] = String(money).split('.')
 
-  // decimal 存在证明有小数点
-  if (decimal) return `${integer}.${decimal.padEnd(2, 0)}`
+  // // decimal 存在证明有小数点
+  // if (decimal) return Number(`${integer}.${decimal.padEnd(2, 0)}`).toFixed(2)
 
-  return `${integer}.00`
+  // return `${integer}.00`
+  return Number(money).toFixed(2)
 }
 
 export {
