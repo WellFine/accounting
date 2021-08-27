@@ -68,7 +68,7 @@
     <button class="remark-btn {{type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')}}" size="mini" loading="{{isAdd}}" bind:tap="add">入账</button>
   </view>
   <textarea wx:else
-    placeholder="请输入备注内容" maxlength="50" auto-height
+    placeholder="请输入备注内容" maxlength="50" auto-height value="{{ remark }}"
     bind:input="inputRemark"
   ></textarea>
 </view>

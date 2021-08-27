@@ -145,13 +145,15 @@ Page({
       }
     }).then(() => {
       this.setData({
-        isAdd: false
+        isAdd: false,
+        money: '',
+        remark: ''
       })
 
       this._loadStorage(account, type, money)
 
       wx.reLaunch({
-        url: '/pages/index/index',
+        url: '/pages/index/index'
       })
     }).catch(() => {
       wx.showToast({
