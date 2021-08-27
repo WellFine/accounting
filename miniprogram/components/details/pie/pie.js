@@ -2,6 +2,7 @@ import * as echarts from '../../ec-canvas/echarts'
 
 import { request } from '../../../utils/request'
 import { getEndTime, getTimestamp } from '../../../utils/date'
+import { padMoney } from '../../../utils/money'
 
 Component({
   properties: {
@@ -154,7 +155,7 @@ Component({
         const { list } = res.result
 
         for (const item of list) {
-          item.money /= 100
+          item.money = padMoney(item.money / 100)
           if (!item._id) {    // 有可能该类型没有 sub 子项，那么直接设为类型名称即可
             item._id = mainName
           }
@@ -191,7 +192,7 @@ Component({
 
       const total = subData.reduce((prev, cur) => {
         return {
-          money: prev.money + cur.money
+          money: (prev.money * 100 + cur.money * 100) / 100
         }
       })
 
