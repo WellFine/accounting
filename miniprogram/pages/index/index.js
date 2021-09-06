@@ -47,9 +47,16 @@ Page({
       beginTime,
       endTime
     }).then(res => {
-      const { list } = res.result,
-            expend = padMoney(list[0].money / 100),
-            income = padMoney(list[1].money / 100)
+      const { list } = res.result
+      let expend = '', income = ''
+
+      if (list.length === 0) {
+        expend = '0.00'
+        income = '0.00'
+      } else {
+        expend = padMoney(list[0].money / 100),
+        income = padMoney(list[1].money / 100)
+      }
       
       // 加载月剩余可支配金额
       this._loadMonthLeftoverMoney(expend)
@@ -59,7 +66,8 @@ Page({
         income,
         isNetworkError: false
       })
-    }).catch(() => {
+    }).catch((err) => {
+      console.log(err)
       toast('收入与支出加载失败')
       this.setData({
         isNetworkError: true
