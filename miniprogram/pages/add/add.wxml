@@ -65,7 +65,11 @@
 <view class="remark">
   <view wx:if="{{!isAddRemark}}" class="row-between-center">
     <text style="color: {{type === 0 ? '#40a9ff' : (type === 1 ? '#73d13d' : '#9254de')}};" bind:tap="readyAddRemark">添加备注</text>
-    <button class="remark-btn {{type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')}}" size="mini" loading="{{isAdd}}" bind:tap="add">入账</button>
+    <button
+      class="remark-btn {{type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')}}"
+      size="mini" loading="{{isAdd}}" disabled="{{ isDisabled }}"
+      bind:tap="add"
+    >入账</button>
   </view>
   <textarea wx:else
     placeholder="请输入备注内容" maxlength="50" auto-height value="{{ remark }}"
@@ -73,4 +77,7 @@
   ></textarea>
 </view>
 
-<button wx:if="{{isAddRemark}}" class="add-btn {{type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')}}" loading="{{isAdd}}" bind:tap="add">入账</button>
+<button
+  wx:if="{{isAddRemark}}" class="add-btn {{type === 0 ? 'expend' : (type === 1 ? 'income' : 'other')}}"
+  loading="{{isAdd}}" disabled="{{ isDisabled }}" bind:tap="add"
+>入账</button>

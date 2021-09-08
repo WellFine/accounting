@@ -27,8 +27,8 @@ Page({
     isAddRemark: false,
     remark: '',
 
-    // 添加请求是否结束, 用于 button 按钮加载效果
-    isAdd: false
+    isAdd: false,       // 添加请求是否结束, 用于入账按钮加载效果
+    isDisabled: false,  // 是否禁用入账按钮，防止多次触发
   },
 
   // 切换头部收支类型
@@ -127,7 +127,8 @@ Page({
     const { type, date, typeObj, subname, howEat, account, remark } = this.data
     
     this.setData({
-      isAdd: true
+      isAdd: true,
+      isDisabled: true
     })
     
     wx.cloud.callFunction({
@@ -145,7 +146,6 @@ Page({
       }
     }).then(() => {
       this.setData({
-        isAdd: false,
         money: '',
         remark: ''
       })
@@ -159,6 +159,11 @@ Page({
       wx.showToast({
         title: '网络可能出错啦',
         icon: 'none'
+      })
+    }).finally(() => {
+      this.setData({
+        isAdd: false,
+        isDisabled: false
       })
     })
   },
