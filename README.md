@@ -5,7 +5,7 @@
 ![启动二维码](./mdImg/open-qrcode.jpg)
 
 # 项目首页展示 / index page display
-![项目首页](./mdImg/index-page.jpg)
+![项目首页](https://github.com/WellFine/accounting/blob/master/mdImg/index-page.jpg)
 
 # 项目入账页展示 / add page display
 ![项目首页](./mdImg/add-page.jpg)
