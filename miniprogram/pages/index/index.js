@@ -17,12 +17,12 @@ Page({
   },
 
   onLoad () {
-    // 从缓存中去除账户余额以及每月可支配金额
+    // 从缓存中取出账户余额以及每月可支配金额
     this.setData({
       totalMoney: padMoney(getAccountBalance() / 100),
       monthCanUseMoney: padMoney(getMonthCanUseMoney() / 100)
     })
-    
+
     // 加载每月总收入与总支出以及月剩余可支配金额
     this._load()
   },

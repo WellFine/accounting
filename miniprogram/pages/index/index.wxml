@@ -4,10 +4,13 @@
 
 <button wx:if="{{ isNetworkError }}" class="reload-btn" loading="{{ isReloading }}" bind:tap="reload">重新加载收入与支出</button>
 
-<!-- wx:if="{{ monthCanUseMoney && monthLeftoverMoney }}" 判断用于 monthLeftoverMoney 变化时重绘水球图 -->
-<com-can-use-money wx:if="{{ monthCanUseMoney && monthLeftoverMoney && !isNetworkError }}"
-  use="{{ monthCanUseMoney }}" useText="本月可支配金额"
-  leftover="{{ monthLeftoverMoney }}" leftoverText="{{ monthLeftoverMoney >= 0 ? '本月剩余可支配' : '本月已超支' }}"
-/>
+<view class="use-money-container" wx:if="{{ !isNetworkError }}">
+  <!-- wx:if="{{ monthCanUseMoney && monthLeftoverMoney }}" 判断用于 monthLeftoverMoney 变化时重绘水球图 -->
+  <com-can-use-money wx:if="{{ monthCanUseMoney && monthLeftoverMoney }}"
+    use="{{ monthCanUseMoney }}" useText="本月可支配金额"
+    leftover="{{ monthLeftoverMoney }}" leftoverText="{{ monthLeftoverMoney >= 0 ? '本月剩余可支配' : '本月已超支' }}"
+  />
+  <com-loading wx:else></com-loading>
+</view>
 
 <com-data-info />

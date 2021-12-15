@@ -15,3 +15,10 @@ page {
   color: #fff;
   background: #ff7875;
 }
+
+.use-money-container {
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

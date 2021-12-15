@@ -6,6 +6,7 @@
     "com-can-use-money": "/components/index/canUseMoney/use",
     "com-income-expend": "/components/index/incomeExpend/incomeExpend",
     "com-data-info": "/components/index/dataInfo/info",
-    "com-icon": "/components/common/icon/icon"
+    "com-icon": "/components/common/icon/icon",
+    "com-loading": "/components/common/loading/loading"
   }
 }
