@@ -71,7 +71,7 @@ function getTimestamp (date = new Date, type = 'month') {
 
 /**
  * 根据传入的日期字符串获取结束日期字符串
- * @param {string}} dateStr 日期字符串 YYYY-MM || YYYY-MM-DD
+ * @param {string} dateStr 日期字符串 YYYY-MM || YYYY-MM-DD
  */
 function getEndTime (dateStr) {
   let [ year, month, day ] = dateStr.split('-')

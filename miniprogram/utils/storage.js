@@ -25,7 +25,6 @@ function getMonthCanUseMoney () {
 
 function initStorage () {
   if (!getAccount()) {
-    console.log('set account')
     setAccount({
       wechat: 0,
       alipay: 0,

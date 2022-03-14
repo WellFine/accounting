@@ -1,3 +1,5 @@
+import { initStorage } from "./utils/storage"
+
 //app.js
 App({
   onLaunch: function () {
@@ -13,6 +15,9 @@ App({
         traceUser: true,
       })
     }
+
+    // 初始化缓存
+    initStorage()
 
     this.globalData = {}
   }

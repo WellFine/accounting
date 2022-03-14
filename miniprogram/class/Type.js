@@ -43,7 +43,7 @@ class Apparel extends Type {
 }
 
 class Educate extends Type {
-  sub = ['学费', '网课费用', '其它']
+  sub = ['学费', '网课费用', '买书', '其它']
 
   constructor () {
     super('教育', 'jiaoyu')
@@ -51,7 +51,7 @@ class Educate extends Type {
 }
 
 class Pay extends Type {
-  sub = ['电费', '水费', '话费', '燃气费', '油费', '停车费', '宽带', '物业', '房贷', '团费', '党费', '学费', '其它']
+  sub = ['电费', '水费', '话费', '燃气费', '油费', '停车费', '宽带', '物业', '房贷', '团费', '党费', '其它']
 
   constructor () {
     super('缴费', 'jiaofei')

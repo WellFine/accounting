@@ -13,7 +13,11 @@ const $ = _.aggregate
 // 云函数入口函数
 exports.main = async event => {
   const { OPENID } = cloud.getWXContext()
-  const { type, name, beginTime, endTime, isNeedDetails, isNeedTotalMoney } = event
+  /**
+   * isNeedDetails 为 true 则返回各时间段详细信息，为 false 则不反悔详细信息 data 字段
+   * isNeedTotalMoney 为 true 则返回改时间段内对应 type 值的总收支，为 false 则不反悔总金额 money 字段
+   */
+  const { type, name, beginTime, endTime, isNeedDetails = false, isNeedTotalMoney = false, sort = -1 } = event
 
   return await collection.aggregate()
     .match({
@@ -38,7 +42,7 @@ exports.main = async event => {
       money: isNeedTotalMoney ? $.sum('$money') : undefined
     })
     .sort({
-      _id: -1   // -1 为降序，1 为升序
+      _id: sort   // -1 为降序，1 为升序
     })
     .limit(31)  // 默认返回 20 条数据，这里根据时间聚合后最多能查询到 31 条数据
     .end()

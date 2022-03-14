@@ -1,8 +1,0 @@
-<view class="container" bind:tap="copyArray">
-  <block wx:for="{{color}}" wx:key="*this">
-    <view class="item" data-value="{{item}}" catch:tap="copyItem">
-      <view class="ball" style="background-color: {{item}};"></view>
-      <text class="value">{{item}}</text>
-    </view>
-  </block>
-</view>

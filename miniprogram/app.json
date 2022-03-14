@@ -2,20 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/details/details",
-    "pages/themeColor/theme",
-    "pages/case/index/index",
-    "pages/case/userConsole/userConsole",
-    "pages/case/storageConsole/storageConsole",
-    "pages/case/databaseGuide/databaseGuide",
-    "pages/case/addFunction/addFunction",
-    "pages/case/deployFunctions/deployFunctions",
-    "pages/case/chooseLib/chooseLib",
-    "pages/case/openapi/openapi",
-    "pages/case/openapi/serverapi/serverapi",
-    "pages/case/openapi/callback/callback",
-    "pages/case/openapi/cloudid/cloudid",
-    "pages/case/im/im",
-    "pages/case/im/room/room"
+    "pages/add/add",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundColor": "#FFFFFF",
@@ -39,12 +27,15 @@
         "text": "明细",
         "iconPath": "images/icon/details.png",
         "selectedIconPath": "images/icon/details-active.png"
-      },
-      {
-        "pagePath": "pages/themeColor/theme",
-        "text": "颜色"
       }
     ]
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "com-icon": "/components/common/icon/icon",
+    "com-loading": "/components/common/loading/loading"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

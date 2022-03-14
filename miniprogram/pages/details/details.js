@@ -1,5 +1,5 @@
 import { request } from '../../utils/request'
-import { getEndTime } from '../../utils/date'
+import { getTimestamp } from '../../utils/date'
 import { padMoney } from '../../utils/money'
 
 Page({
@@ -41,10 +41,10 @@ Page({
   },
 
   _loadExpendIncome () {
-    const { date } = this.data
+    const { beginTime, endTime } = getTimestamp(new Date(this.data.date))
     request('getDetailsByTypeGroup', {
-      beginTime: Date.parse(date),
-      endTime: getEndTime(date)
+      beginTime,
+      endTime
     }).then(res => {
       const { list } = res.result
       
