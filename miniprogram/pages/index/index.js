@@ -48,8 +48,10 @@ Page({
       endTime
     }).then(res => {
       const { list } = res.result
-      let expend = list[0] ? padMoney(list[0].money / 100) : '0.00',
-          income = list[1] ? padMoney(list[1].money / 100) : '0.00'
+      const expendObj = list.find(item => +item._id === 0)
+      const incomeObj = list.find(item => +item._id === 1)
+      let expend = expendObj ? padMoney(expendObj.money / 100) : '0.00',
+          income = incomeObj ? padMoney(incomeObj.money / 100) : '0.00'
 
       // 加载月剩余可支配金额
       this._loadMonthLeftoverMoney(expend)
